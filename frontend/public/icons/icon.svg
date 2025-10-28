@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="RSU Padova logo">
+  <rect width="64" height="64" rx="12" fill="#0ea5e9" />
+  <path d="M18 20h16a6 6 0 0 1 0 12H18Zm0 16h20a6 6 0 0 1 0 12H18Z" fill="#f8fafc" />
+  <path d="M38 12h8v40h-8z" fill="#38bdf8" />
+</svg>

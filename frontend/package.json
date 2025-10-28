@@ -1,0 +1,45 @@
+{
+  "name": "rsu-padova-frontend",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "remix dev",
+    "build": "remix build",
+    "start": "remix-serve build",
+    "test": "vitest",
+    "test:ui": "vitest run tests/ui",
+    "test:playwright": "playwright test",
+    "test:pwa": "lighthouse http://localhost:4173 --config-path=./lighthouse.config.mjs --output html --output-path=./reports/lighthouse.html"
+  },
+  "dependencies": {
+    "@remix-run/node": "^2.11.1",
+    "@remix-run/react": "^2.11.1",
+    "@remix-run/serve": "^2.11.1",
+    "@tanstack/react-query": "^5.37.1",
+    "firebase": "^10.11.0",
+    "isbot": "^4.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^2.11.1",
+    "@remix-run/testing": "^2.11.1",
+    "@remix-run/vite": "^2.11.1",
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^14.1.2",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.16",
+    "cross-env": "^7.0.3",
+    "lighthouse": "^11.6.0",
+    "msw": "^2.3.2",
+    "playwright": "^1.44.0",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3",
+    "vite": "^5.1.0",
+    "vitest": "^1.3.1"
+  }
+}
