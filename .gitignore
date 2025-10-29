@@ -1,0 +1,8 @@
+backend/node_modules
+frontend/node_modules
+/build
+backend/dist
+frontend/dist
+/reports
+.idea
+.env
