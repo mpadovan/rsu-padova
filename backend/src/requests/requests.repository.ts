@@ -68,7 +68,11 @@ export class RequestsRepository {
     );
 
     const updatedDoc = await docRef.get();
-    return this.mapDocument(updatedDoc.id, updatedDoc.data());
+    const data = updatedDoc.data();
+    if (!updatedDoc || !updatedDoc.exists || !data) {
+      throw new Error('Document not found');
+    }
+    return this.mapDocument(updatedDoc.id, data);
   }
 
   private mapDocument(

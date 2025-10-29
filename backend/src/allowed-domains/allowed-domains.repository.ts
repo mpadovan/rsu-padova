@@ -27,10 +27,11 @@ export class AllowedDomainsRepository {
 
   async findById(id: string): Promise<AllowedDomain | null> {
     const doc = await this.collection.doc(id).get();
-    if (!doc.exists) {
-      return null;
+    const data = doc.data();
+    if (!doc || !doc.exists || !data) {
+      return null
     }
-    return this.mapDocument(doc.id, doc.data());
+    return this.mapDocument(doc.id, data);
   }
 
   async create(domain: string): Promise<AllowedDomain> {
@@ -45,7 +46,11 @@ export class AllowedDomainsRepository {
     const payload = { domain, updatedAt: now };
     await this.collection.doc(id).set(payload, { merge: true });
     const doc = await this.collection.doc(id).get();
-    return this.mapDocument(doc.id, doc.data());
+    const data = doc.data();
+    if (!doc || !doc.exists || !data) {
+      throw new Error('Document not found');
+    }
+    return this.mapDocument(doc.id, data);
   }
 
   async delete(id: string): Promise<void> {
